@@ -3,10 +3,9 @@ Julienne
 
 Spun off from the [Sourcery] proving ground and inspired by [Veggies], Julienne provides unit-testing and string-handling capabilities for modern Fortran. 
 Julienne's originator developed Sourcery, enjoyed using Veggies, and sought to capture a thin slice of the Veggies capabilities while avoiding the compiler limitations that prevented use of Sourcery or Veggies.
-Julienne is achieved through minimalism and isolation.
-offering a thin slice of the capabilities of Veggies with no external dependencies. 
-This is accomplished by incorporating only those parts of Sourcery that the recent versions of most Fortran compilers support.
-The latter parts are mostly related to strings.
+Julienne achieves compiler-portability through minimalism and isolation, offering a thin slice of the capabilities of Veggies with no external dependencies. 
+Julienne contains those parts of Sourcery that the recent versions of most Fortran compilers support.
+
 
 Building and Testing
 --------------------
