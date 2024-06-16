@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-24.04]
+        os: [macos-12, ubuntu-24.04]
 
     steps:
     - name: Checkout code
@@ -22,6 +22,11 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y build-essential gfortran-14 g++-14
+
+    - name: Install Dependencies on macOS
+      if: contains(matrix.os, 'macos')
+      run: |
+        brew install gfortran
 
     - name: Build and Run unit tests
       run: |
