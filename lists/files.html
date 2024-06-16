@@ -1,0 +1,593 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="A standalone, minimal unit-testing and string/command-line-handling utility.">
+    <meta name="author" content="Berkeley Lab" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>All Files &ndash; Julienne
+</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Julienne </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row" id='text'>
+        <div class="col-lg-12">
+			 <h1>Source Files</h1>
+			 <table class="table table-striped">
+			 <thead><tr><th>File</th><th>Description</th></tr></thead>
+			 <tbody>
+			   <tr>
+                 <td><a href='../sourcefile/check-command-line-argument.f90.html'>check-command-line-argument.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/get-flag-value.f90.html'>get-flag-value.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/handle-missing-flag.f90.html'>handle-missing-flag.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_command_line_m.f90.html'>julienne_command_line_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_command_line_s.f90.html'>julienne_command_line_s.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_formats_m.f90.html'>julienne_formats_m.F90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_formats_s.f90.html'>julienne_formats_s.F90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_m.f90.html'>julienne_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_string_m.f90.html'>julienne_string_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_string_s.f90.html'>julienne_string_s.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_test_description_m.f90.html'>julienne_test_description_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_test_description_s.f90.html'>julienne_test_description_s.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_test_m.f90.html'>julienne_test_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_test_result_m.f90.html'>julienne_test_result_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_test_result_s.f90.html'>julienne_test_result_s.F90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_test_s.f90.html'>julienne_test_s.F90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_user_defined_collectives_m.f90.html'>julienne_user_defined_collectives_m.f90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_user_defined_collectives_s.f90.html'>julienne_user_defined_collectives_s.F90</a></td>
+                 <td></td>
+               </tr>
+			   <tr>
+                 <td><a href='../sourcefile/julienne_vector_test_description_m.f90.html'>julienne_vector_test_description_m.f90</a></td>
+                 <td></td>
+               </tr>
+			 </tbody></table>
+			 <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: file~~graph~~FileGraph Pages: 1 -->
+<svg id="filegraphFileGraph" width="641pt" height="236pt"
+ viewBox="0.00 0.00 641.00 235.74" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="file~~graph~~FileGraph" class="graph" transform="scale(1.73 1.73) rotate(0) translate(4 403.13)">
+<title>file~~graph~~FileGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-403.13 1103,-403.13 1103,4 -4,4"/>
+<!-- sourcefile~check&#45;command&#45;line&#45;argument.f90 -->
+<g id="file~~graph~~FileGraph_node1" class="node">
+<title>sourcefile~check&#45;command&#45;line&#45;argument.f90</title>
+<g id="a_file~~graph~~FileGraph_node1"><a xlink:href="../sourcefile/check-command-line-argument.f90.html" xlink:title="check&#45;command&#45;line&#45;argument.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="202,-319.13 0,-319.13 0,-295.13 202,-295.13 202,-319.13"/>
+<text text-anchor="middle" x="101" y="-304.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check&#45;command&#45;line&#45;argument.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~get&#45;flag&#45;value.f90 -->
+<g id="file~~graph~~FileGraph_node2" class="node">
+<title>sourcefile~get&#45;flag&#45;value.f90</title>
+<g id="a_file~~graph~~FileGraph_node2"><a xlink:href="../sourcefile/get-flag-value.f90.html" xlink:title="get&#45;flag&#45;value.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="154.5,-277.13 47.5,-277.13 47.5,-253.13 154.5,-253.13 154.5,-277.13"/>
+<text text-anchor="middle" x="101" y="-262.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get&#45;flag&#45;value.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~handle&#45;missing&#45;flag.f90 -->
+<g id="file~~graph~~FileGraph_node3" class="node">
+<title>sourcefile~handle&#45;missing&#45;flag.f90</title>
+<g id="a_file~~graph~~FileGraph_node3"><a xlink:href="../sourcefile/handle-missing-flag.f90.html" xlink:title="handle&#45;missing&#45;flag.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="170,-235.13 32,-235.13 32,-211.13 170,-211.13 170,-235.13"/>
+<text text-anchor="middle" x="101" y="-220.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">handle&#45;missing&#45;flag.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_command_line_m.f90 -->
+<g id="file~~graph~~FileGraph_node4" class="node">
+<title>sourcefile~julienne_command_line_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node4"><a xlink:href="../sourcefile/julienne_command_line_m.f90.html" xlink:title="julienne_command_line_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="648.5,-155.13 473.5,-155.13 473.5,-131.13 648.5,-131.13 648.5,-155.13"/>
+<text text-anchor="middle" x="561" y="-140.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_command_line_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_command_line_s.f90 -->
+<g id="file~~graph~~FileGraph_node5" class="node">
+<title>sourcefile~julienne_command_line_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node5"><a xlink:href="../sourcefile/julienne_command_line_s.f90.html" xlink:title="julienne_command_line_s.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="410.5,-134.13 240.5,-134.13 240.5,-110.13 410.5,-110.13 410.5,-134.13"/>
+<text text-anchor="middle" x="325.5" y="-119.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_command_line_s.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_command_line_m.f90&#45;&gt;sourcefile~julienne_command_line_s.f90 -->
+<g id="file~~graph~~FileGraph_edge4" class="edge">
+<title>sourcefile~julienne_command_line_m.f90&#45;&gt;sourcefile~julienne_command_line_s.f90</title>
+<path fill="none" stroke="#bbff00" d="M473.39,-135.34C456.24,-133.8 438.17,-132.17 420.79,-130.61"/>
+<polygon fill="#bbff00" stroke="#bbff00" points="420.92,-127.1 410.65,-129.69 420.29,-134.08 420.92,-127.1"/>
+</g>
+<!-- sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_node8" class="node">
+<title>sourcefile~julienne_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node8"><a xlink:href="../sourcefile/julienne_m.f90.html" xlink:title="julienne_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="371,-277.13 280,-277.13 280,-253.13 371,-253.13 371,-277.13"/>
+<text text-anchor="middle" x="325.5" y="-262.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_command_line_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge6" class="edge">
+<title>sourcefile~julienne_command_line_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M473.49,-155.03C465.03,-157.51 456.73,-160.51 449,-164.13 406.58,-184.01 366.49,-222.01 344.34,-245.31"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="341.53,-243.18 337.27,-252.88 346.65,-247.95 341.53,-243.18"/>
+</g>
+<!-- sourcefile~julienne_test_s.f90 -->
+<g id="file~~graph~~FileGraph_node16" class="node">
+<title>sourcefile~julienne_test_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node16"><a xlink:href="../sourcefile/julienne_test_s.f90.html" xlink:title="julienne_test_s.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="382,-176.13 269,-176.13 269,-152.13 382,-152.13 382,-176.13"/>
+<text text-anchor="middle" x="325.5" y="-161.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_test_s.F90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_command_line_m.f90&#45;&gt;sourcefile~julienne_test_s.f90 -->
+<g id="file~~graph~~FileGraph_edge21" class="edge">
+<title>sourcefile~julienne_command_line_m.f90&#45;&gt;sourcefile~julienne_test_s.f90</title>
+<path fill="none" stroke="#bb00ff" d="M473.39,-150.92C446.58,-153.33 417.5,-155.94 392.34,-158.21"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="391.82,-154.74 382.18,-159.12 392.45,-161.71 391.82,-154.74"/>
+</g>
+<!-- sourcefile~julienne_formats_m.f90 -->
+<g id="file~~graph~~FileGraph_node6" class="node">
+<title>sourcefile~julienne_formats_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node6"><a xlink:href="../sourcefile/julienne_formats_m.f90.html" xlink:title="julienne_formats_m.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="631,-399.13 491,-399.13 491,-375.13 631,-375.13 631,-399.13"/>
+<text text-anchor="middle" x="561" y="-384.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_formats_m.F90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_formats_s.f90 -->
+<g id="file~~graph~~FileGraph_node7" class="node">
+<title>sourcefile~julienne_formats_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node7"><a xlink:href="../sourcefile/julienne_formats_s.f90.html" xlink:title="julienne_formats_s.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="393,-399.13 258,-399.13 258,-375.13 393,-375.13 393,-399.13"/>
+<text text-anchor="middle" x="325.5" y="-384.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_formats_s.F90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_formats_m.f90&#45;&gt;sourcefile~julienne_formats_s.f90 -->
+<g id="file~~graph~~FileGraph_edge5" class="edge">
+<title>sourcefile~julienne_formats_m.f90&#45;&gt;sourcefile~julienne_formats_s.f90</title>
+<path fill="none" stroke="#1aff00" d="M490.89,-387.13C463.34,-387.13 431.52,-387.13 403.26,-387.13"/>
+<polygon fill="#1aff00" stroke="#1aff00" points="403.02,-383.63 393.02,-387.13 403.02,-390.63 403.02,-383.63"/>
+</g>
+<!-- sourcefile~julienne_formats_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge7" class="edge">
+<title>sourcefile~julienne_formats_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M490.8,-381.46C476.33,-378.28 461.65,-373.45 449,-366.13 427.72,-353.81 431.31,-340.53 413,-324.13 395.47,-308.43 373.56,-293.52 356.17,-282.62"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="357.89,-279.57 347.54,-277.3 354.21,-285.53 357.89,-279.57"/>
+</g>
+<!-- sourcefile~julienne_m.f90&#45;&gt;sourcefile~check&#45;command&#45;line&#45;argument.f90 -->
+<g id="file~~graph~~FileGraph_edge1" class="edge">
+<title>sourcefile~julienne_m.f90&#45;&gt;sourcefile~check&#45;command&#45;line&#45;argument.f90</title>
+<path fill="none" stroke="#ff0000" d="M279.74,-273.58C249.94,-279.2 210.09,-286.72 175.67,-293.22"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="174.83,-289.82 165.66,-295.11 176.13,-296.7 174.83,-289.82"/>
+</g>
+<!-- sourcefile~julienne_m.f90&#45;&gt;sourcefile~get&#45;flag&#45;value.f90 -->
+<g id="file~~graph~~FileGraph_edge2" class="edge">
+<title>sourcefile~julienne_m.f90&#45;&gt;sourcefile~get&#45;flag&#45;value.f90</title>
+<path fill="none" stroke="#ff5000" d="M279.74,-265.13C246.68,-265.13 201.25,-265.13 164.59,-265.13"/>
+<polygon fill="#ff5000" stroke="#ff5000" points="164.51,-261.63 154.51,-265.13 164.51,-268.63 164.51,-261.63"/>
+</g>
+<!-- sourcefile~julienne_m.f90&#45;&gt;sourcefile~handle&#45;missing&#45;flag.f90 -->
+<g id="file~~graph~~FileGraph_edge3" class="edge">
+<title>sourcefile~julienne_m.f90&#45;&gt;sourcefile~handle&#45;missing&#45;flag.f90</title>
+<path fill="none" stroke="#ffa100" d="M279.74,-256.68C249.94,-251.05 210.09,-243.53 175.67,-237.03"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="176.13,-233.56 165.66,-235.14 174.83,-240.44 176.13,-233.56"/>
+</g>
+<!-- sourcefile~julienne_string_m.f90 -->
+<g id="file~~graph~~FileGraph_node9" class="node">
+<title>sourcefile~julienne_string_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node9"><a xlink:href="../sourcefile/julienne_string_m.f90.html" xlink:title="julienne_string_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1099,-317.13 972,-317.13 972,-293.13 1099,-293.13 1099,-317.13"/>
+<text text-anchor="middle" x="1035.5" y="-302.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_string_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge8" class="edge">
+<title>sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M821.5,-305.13C655.73,-305.13 613.76,-304.39 449,-286.13 426.7,-283.66 402.3,-279.73 381.19,-275.93"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="381.59,-272.45 371.12,-274.09 380.33,-279.33 381.59,-272.45"/>
+</g>
+<!-- sourcefile~julienne_string_s.f90 -->
+<g id="file~~graph~~FileGraph_node10" class="node">
+<title>sourcefile~julienne_string_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node10"><a xlink:href="../sourcefile/julienne_string_s.f90.html" xlink:title="julienne_string_s.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="883,-357.13 762,-357.13 762,-333.13 883,-333.13 883,-357.13"/>
+<text text-anchor="middle" x="822.5" y="-342.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_string_s.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_string_s.f90 -->
+<g id="file~~graph~~FileGraph_edge13" class="edge">
+<title>sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_string_s.f90</title>
+<path fill="none" stroke="#00ffd6" d="M971.76,-317.02C946.99,-321.72 918.43,-327.13 893.03,-331.95"/>
+<polygon fill="#00ffd6" stroke="#00ffd6" points="892.27,-328.53 883.1,-333.83 893.58,-335.4 892.27,-328.53"/>
+</g>
+<!-- sourcefile~julienne_test_description_m.f90 -->
+<g id="file~~graph~~FileGraph_node11" class="node">
+<title>sourcefile~julienne_test_description_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node11"><a xlink:href="../sourcefile/julienne_test_description_m.f90.html" xlink:title="julienne_test_description_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="651.5,-357.13 470.5,-357.13 470.5,-333.13 651.5,-333.13 651.5,-357.13"/>
+<text text-anchor="middle" x="561" y="-342.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_test_description_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_test_description_m.f90 -->
+<g id="file~~graph~~FileGraph_edge14" class="edge">
+<title>sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_test_description_m.f90</title>
+<path fill="none" stroke="#00d6ff" d="M821.5,-305.13C751.7,-305.13 672.55,-319.44 620.22,-330.94"/>
+<polygon fill="#00d6ff" stroke="#00d6ff" points="619.44,-327.53 610.44,-333.13 620.96,-334.36 619.44,-327.53"/>
+</g>
+<!-- sourcefile~julienne_test_result_m.f90 -->
+<g id="file~~graph~~FileGraph_node14" class="node">
+<title>sourcefile~julienne_test_result_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node14"><a xlink:href="../sourcefile/julienne_test_result_m.f90.html" xlink:title="julienne_test_result_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="898,-257.13 747,-257.13 747,-233.13 898,-233.13 898,-257.13"/>
+<text text-anchor="middle" x="822.5" y="-242.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_test_result_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_test_result_m.f90 -->
+<g id="file~~graph~~FileGraph_edge18" class="edge">
+<title>sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_test_result_m.f90</title>
+<path fill="none" stroke="#1a00ff" d="M992.05,-293.06C958.5,-283.52 911.52,-270.16 875.67,-259.96"/>
+<polygon fill="#1a00ff" stroke="#1a00ff" points="876.45,-256.55 865.88,-257.18 874.54,-263.28 876.45,-256.55"/>
+</g>
+<!-- sourcefile~julienne_vector_test_description_m.f90 -->
+<g id="file~~graph~~FileGraph_node19" class="node">
+<title>sourcefile~julienne_vector_test_description_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node19"><a xlink:href="../sourcefile/julienne_vector_test_description_m.f90.html" xlink:title="julienne_vector_test_description_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="671,-277.13 451,-277.13 451,-253.13 671,-253.13 671,-277.13"/>
+<text text-anchor="middle" x="561" y="-262.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_vector_test_description_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_vector_test_description_m.f90 -->
+<g id="file~~graph~~FileGraph_edge25" class="edge">
+<title>sourcefile~julienne_string_m.f90&#45;&gt;sourcefile~julienne_vector_test_description_m.f90</title>
+<path fill="none" stroke="#ff0050" d="M971.72,-305.13C929.76,-305.13 873.32,-305.13 823.5,-305.13"/>
+<path fill="none" stroke="#ff0050" d="M821.5,-305.13C751.7,-305.13 672.55,-290.81 620.22,-279.31"/>
+<polygon fill="#ff0050" stroke="#ff0050" points="620.96,-275.89 610.44,-277.13 619.44,-282.73 620.96,-275.89"/>
+</g>
+<!-- sourcefile~julienne_test_description_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge9" class="edge">
+<title>sourcefile~julienne_test_description_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M499.52,-333.1C482.97,-329.23 465.14,-324.52 449,-319.13 417.86,-308.72 383.79,-293.36 359.51,-281.68"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="360.9,-278.46 350.38,-277.24 357.84,-284.76 360.9,-278.46"/>
+</g>
+<!-- sourcefile~julienne_test_description_s.f90 -->
+<g id="file~~graph~~FileGraph_node12" class="node">
+<title>sourcefile~julienne_test_description_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node12"><a xlink:href="../sourcefile/julienne_test_description_s.f90.html" xlink:title="julienne_test_description_s.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="413,-357.13 238,-357.13 238,-333.13 413,-333.13 413,-357.13"/>
+<text text-anchor="middle" x="325.5" y="-342.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_test_description_s.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_test_description_m.f90&#45;&gt;sourcefile~julienne_test_description_s.f90 -->
+<g id="file~~graph~~FileGraph_edge16" class="edge">
+<title>sourcefile~julienne_test_description_m.f90&#45;&gt;sourcefile~julienne_test_description_s.f90</title>
+<path fill="none" stroke="#0086ff" d="M470.39,-345.13C454.99,-345.13 438.92,-345.13 423.33,-345.13"/>
+<polygon fill="#0086ff" stroke="#0086ff" points="423.18,-341.63 413.18,-345.13 423.18,-348.63 423.18,-341.63"/>
+</g>
+<!-- sourcefile~julienne_test_m.f90 -->
+<g id="file~~graph~~FileGraph_node13" class="node">
+<title>sourcefile~julienne_test_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node13"><a xlink:href="../sourcefile/julienne_test_m.f90.html" xlink:title="julienne_test_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="619,-197.13 503,-197.13 503,-173.13 619,-173.13 619,-197.13"/>
+<text text-anchor="middle" x="561" y="-182.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_test_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_test_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge10" class="edge">
+<title>sourcefile~julienne_test_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M502.97,-196.36C485.46,-200.37 466.27,-205.35 449,-211.13 417.86,-221.54 383.79,-236.9 359.51,-248.58"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="357.84,-245.5 350.38,-253.02 360.9,-251.79 357.84,-245.5"/>
+</g>
+<!-- sourcefile~julienne_test_m.f90&#45;&gt;sourcefile~julienne_test_s.f90 -->
+<g id="file~~graph~~FileGraph_edge22" class="edge">
+<title>sourcefile~julienne_test_m.f90&#45;&gt;sourcefile~julienne_test_s.f90</title>
+<path fill="none" stroke="#bb00ff" d="M502.88,-179.99C469.45,-176.98 427.12,-173.18 392.3,-170.04"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="392.5,-166.55 382.23,-169.14 391.87,-173.52 392.5,-166.55"/>
+</g>
+<!-- sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge11" class="edge">
+<title>sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M746.78,-241.09C671.46,-237.93 551.94,-235.37 449,-244.13 426.64,-246.03 402.24,-249.85 381.14,-253.72"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="380.25,-250.32 371.07,-255.61 381.54,-257.2 380.25,-250.32"/>
+</g>
+<!-- sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_test_description_m.f90 -->
+<g id="file~~graph~~FileGraph_edge15" class="edge">
+<title>sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_test_description_m.f90</title>
+<path fill="none" stroke="#00d6ff" d="M790.2,-257.19C743.34,-275.25 654.93,-309.32 602.98,-329.33"/>
+<polygon fill="#00d6ff" stroke="#00d6ff" points="601.49,-326.16 593.41,-333.02 604,-332.69 601.49,-326.16"/>
+</g>
+<!-- sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_test_m.f90 -->
+<g id="file~~graph~~FileGraph_edge17" class="edge">
+<title>sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_test_m.f90</title>
+<path fill="none" stroke="#0035ff" d="M769.3,-233.06C727.33,-223.35 668.27,-209.7 623.91,-199.44"/>
+<polygon fill="#0035ff" stroke="#0035ff" points="624.65,-196.02 614.12,-197.18 623.07,-202.84 624.65,-196.02"/>
+</g>
+<!-- sourcefile~julienne_test_result_s.f90 -->
+<g id="file~~graph~~FileGraph_node15" class="node">
+<title>sourcefile~julienne_test_result_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node15"><a xlink:href="../sourcefile/julienne_test_result_s.f90.html" xlink:title="julienne_test_result_s.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="635,-113.13 487,-113.13 487,-89.13 635,-89.13 635,-113.13"/>
+<text text-anchor="middle" x="561" y="-98.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_test_result_s.F90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_test_result_s.f90 -->
+<g id="file~~graph~~FileGraph_edge19" class="edge">
+<title>sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_test_result_s.f90</title>
+<path fill="none" stroke="#6b00ff" d="M810.98,-233.01C788.45,-207.9 732.68,-150.18 673,-122.13 664.15,-117.97 654.53,-114.63 644.78,-111.95"/>
+<polygon fill="#6b00ff" stroke="#6b00ff" points="645.57,-108.54 635.02,-109.49 643.86,-115.33 645.57,-108.54"/>
+</g>
+<!-- sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_vector_test_description_m.f90 -->
+<g id="file~~graph~~FileGraph_edge26" class="edge">
+<title>sourcefile~julienne_test_result_m.f90&#45;&gt;sourcefile~julienne_vector_test_description_m.f90</title>
+<path fill="none" stroke="#ff0050" d="M746.79,-250.89C726.4,-252.46 703.79,-254.2 681.58,-255.91"/>
+<polygon fill="#ff0050" stroke="#ff0050" points="681.12,-252.44 671.42,-256.69 681.66,-259.42 681.12,-252.44"/>
+</g>
+<!-- sourcefile~julienne_user_defined_collectives_m.f90 -->
+<g id="file~~graph~~FileGraph_node17" class="node">
+<title>sourcefile~julienne_user_defined_collectives_m.f90</title>
+<g id="a_file~~graph~~FileGraph_node17"><a xlink:href="../sourcefile/julienne_user_defined_collectives_m.f90.html" xlink:title="julienne_user_defined_collectives_m.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="936,-71.13 709,-71.13 709,-47.13 936,-47.13 936,-71.13"/>
+<text text-anchor="middle" x="822.5" y="-56.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_user_defined_collectives_m.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_user_defined_collectives_m.f90&#45;&gt;sourcefile~julienne_test_result_s.f90 -->
+<g id="file~~graph~~FileGraph_edge20" class="edge">
+<title>sourcefile~julienne_user_defined_collectives_m.f90&#45;&gt;sourcefile~julienne_test_result_s.f90</title>
+<path fill="none" stroke="#6b00ff" d="M747.14,-71.16C715.24,-76.32 677.85,-82.38 645.05,-87.69"/>
+<polygon fill="#6b00ff" stroke="#6b00ff" points="644.34,-84.25 635.03,-89.31 645.46,-91.16 644.34,-84.25"/>
+</g>
+<!-- sourcefile~julienne_user_defined_collectives_m.f90&#45;&gt;sourcefile~julienne_test_s.f90 -->
+<g id="file~~graph~~FileGraph_edge23" class="edge">
+<title>sourcefile~julienne_user_defined_collectives_m.f90&#45;&gt;sourcefile~julienne_test_s.f90</title>
+<path fill="none" stroke="#bb00ff" d="M793.97,-46.97C727.53,-19.69 556,38.3 449,-38.13 408.86,-66.8 449.45,-109.89 413,-143.13 406.91,-148.68 399.61,-152.83 391.86,-155.92"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="390.58,-152.66 382.23,-159.19 392.83,-159.29 390.58,-152.66"/>
+</g>
+<!-- sourcefile~julienne_user_defined_collectives_s.f90 -->
+<g id="file~~graph~~FileGraph_node18" class="node">
+<title>sourcefile~julienne_user_defined_collectives_s.f90</title>
+<g id="a_file~~graph~~FileGraph_node18"><a xlink:href="../sourcefile/julienne_user_defined_collectives_s.f90.html" xlink:title="julienne_user_defined_collectives_s.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="673,-71.13 449,-71.13 449,-47.13 673,-47.13 673,-71.13"/>
+<text text-anchor="middle" x="561" y="-56.73" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">julienne_user_defined_collectives_s.F90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~julienne_user_defined_collectives_m.f90&#45;&gt;sourcefile~julienne_user_defined_collectives_s.f90 -->
+<g id="file~~graph~~FileGraph_edge24" class="edge">
+<title>sourcefile~julienne_user_defined_collectives_m.f90&#45;&gt;sourcefile~julienne_user_defined_collectives_s.f90</title>
+<path fill="none" stroke="#ff00a1" d="M708.81,-59.13C700.45,-59.13 691.99,-59.13 683.58,-59.13"/>
+<polygon fill="#ff00a1" stroke="#ff00a1" points="683.35,-55.63 673.35,-59.13 683.35,-62.63 683.35,-55.63"/>
+</g>
+<!-- sourcefile~julienne_vector_test_description_m.f90&#45;&gt;sourcefile~julienne_m.f90 -->
+<g id="file~~graph~~FileGraph_edge12" class="edge">
+<title>sourcefile~julienne_vector_test_description_m.f90&#45;&gt;sourcefile~julienne_m.f90</title>
+<path fill="none" stroke="#00ff35" d="M450.77,-265.13C426.71,-265.13 402.21,-265.13 381.41,-265.13"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="381.19,-261.63 371.19,-265.13 381.19,-268.63 381.19,-261.63"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panfilegraphFileGraph = svgPanZoom('#filegraphFileGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#FileGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="FileGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="202pt" height="32pt"
+ viewBox="0.00 0.00 201.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 197.5,-28 197.5,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="193.5,-24 88.5,-24 88.5,0 193.5,0 193.5,-24"/>
+<text text-anchor="middle" x="141" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a file to a file which it depends on. A file
+is dependent upon another if the latter must be compiled before the former
+can be.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Julienne
+ was developed by Berkeley Lab<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-06-16 21:33              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
