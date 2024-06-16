@@ -1,3 +1,5 @@
+! Copyright (c) 2024, Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 submodule(julienne_test_m) julienne_test_s
   use julienne_user_defined_collectives_m, only : co_all
   use julienne_command_line_m, only : command_line_t

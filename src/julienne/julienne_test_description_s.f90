@@ -1,3 +1,5 @@
+! Copyright (c) 2024, Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 submodule(julienne_test_description_m) julienne_test_description_s
   implicit none
 contains

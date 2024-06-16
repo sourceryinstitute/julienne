@@ -1,3 +1,5 @@
+! Copyright (c) 2024, Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 module julienne_test_m
   !! Define an abstract test_t type with deferred bindings ("subject" and "results")
   !! used by a type-bound procedure ("report") for reporting test results.  The "report"
