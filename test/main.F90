@@ -36,7 +36,10 @@ program main
   call vector_test_description_test%report(passes,tests)
   if (.not. GitHub_CI())  call command_line_test%report(passes, tests)
 
-  if (this_image()==1) print *, new_line('a'), "_________ In total, ",passes," of ",tests, " tests pass. _________"
+#ifndef __flang__
+  if (this_image()==1) &
+#endif
+  print *, new_line('a'), "_________ In total, ",passes," of ",tests, " tests pass. _________"
   if (passes /= tests) error stop
 contains
 
