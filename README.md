@@ -7,7 +7,7 @@ This software repository captures the authors' most frequently used thin slice o
 Julienne achieves portability across compilers through minimalism and isolation.
 Thus Julienne has no external dependencies and offers limited but widely useful capabilities.
 A need for unit testing support drive the creation of Julienne.
-The string-handlikng capabilities are included primarily because they support Julienne's unit-testing code.
+The string-handling capabilities are included primarily because they support Julienne's unit-testing code.
 
 Examples
 --------
