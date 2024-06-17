@@ -1,3 +1,5 @@
+! Copyright (c) 2024, Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 module julienne_string_m
   use assert_m, only : characterizable_t
   implicit none
