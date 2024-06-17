@@ -4,7 +4,7 @@ module julienne_m
   use julienne_bin_m, only : bin_t
   use julienne_command_line_m, only : command_line_t
   use julienne_file_m, only : file_t
-  use julienne_formats_m, only : separated_values
+  use julienne_formats_m, only : separated_values, csv
   use julienne_string_m, only : string_t, operator(.cat.)
   use julienne_test_m, only : test_t, test_description_substring
   use julienne_test_description_m, only : test_description_t, test_function_i
@@ -14,6 +14,7 @@ module julienne_m
   implicit none
   private
   public :: bin_t
+  public :: csv
   public :: command_line_t
   public :: operator(.cat.)
   public :: file_t
