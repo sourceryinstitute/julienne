@@ -86,10 +86,15 @@ https://github.com/sourceryinstitute/julienne" role="button">GitHub</a>
         <div class=col-md-8>
           <h1>Julienne</h1>
           <h1 id="julienne">Julienne</h1>
-<p>Spun off from the <a href="https://github.com/sourceryinstitute/sourcery">Sourcery</a> proving ground and inspired by <a href="https://gitlab.com/everythingfunctional/veggies">Veggies</a>, Julienne provides unit-testing and string-handling capabilities for modern Fortran. 
-Julienne's originator developed Sourcery, enjoyed using Veggies, and sought to capture a thin slice of the Veggies capabilities while avoiding the compiler limitations that prevented use of Sourcery or Veggies.
-Julienne achieves compiler-portability through minimalism and isolation, offering a thin slice of the capabilities of Veggies with no external dependencies. 
-Julienne contains those parts of Sourcery that the recent versions of most Fortran compilers support.</p>
+<p>Spun off from <a href="https://github.com/sourceryinstitute/sourcery">Sourcery</a> and inspired by <a href="https://gitlab.com/everythingfunctional/veggies">Veggies</a>, Julienne is a modern-Fortran unit-testing framework and utility for manipulating strings, including command lines and input/output format strings. 
+This repository's name derives from the term for vegetables sliced into thin strings: julienn vegetables.
+This software repository captures the authors' most frequently used thin slice of the Veggies and Sourcery repositories while avoiding certain compiler limitations.
+Julienne achieves portability across compilers through minimalism and isolation.
+Thus Julienne has no external dependencies and offers limited but widely useful capabilities.
+A need for unit testing support drive the creation of Julienne.
+The string-handling capabilities are included primarily because they support Julienne's unit-testing code.</p>
+<h2 id="examples">Examples</h2>
+<p>For examples of how to use Julienne, please see the <a href="./examples">examples</a> subdirectory.</p>
 <h2 id="building-and-testing">Building and Testing</h2>
 <h3 id="gnu-gfortran">GNU (<code>gfortran</code>)</h3>
 <div class="codehilite"><pre><span></span><code>fpm test
@@ -104,10 +109,11 @@ Julienne contains those parts of Sourcery that the recent versions of most Fortr
 <div class="codehilite"><pre><span></span><code>fpm test --compiler flang-new --flag &quot;-mmlir -allow-assumed-rank&quot;
 </code></pre></div>
 
-<p>LLVM Flang's capabilities are evolving rapidly so we recommend building a recent version of the main branch of llvm-project.
-A script that could be helpful for doing so is <a href="https://github.com/rouson/handy-dandy/blob/7caaa4dc3d6e5331914a3025f0cb1db5ac1a886f/src/fresh-llvm-build.sh">here</a>.</p>
+<p>where the flags <code>-mmlir -allow-assumed-rank</code> turn on LLVM Flang's experimental support for Fortran's assumed-rank dummy arguments.
+Flang's capabilities are evolving rapidly so we recommend building a recent version of the main branch of llvm-project.
+A script that might be helpful for doing so is in the <a href="https://github.com/rouson/handy-dandy/blob/7caaa4dc3d6e5331914a3025f0cb1db5ac1a886f/src/fresh-llvm-build.sh">handy-dandy</a> repository.</p>
 <h2 id="documentation">Documentation</h2>
-<p>Build the documentation with </p>
+<p>See our online <a href="https://sourceryinstitute.github.io/assert/">documentation</a> or build the documentation locally by installing <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> and executing</p>
 <div class="codehilite"><pre><span></span><code>ford ford.md
 </code></pre></div>
         </div>
@@ -134,7 +140,7 @@ A script that could be helpful for doing so is <a href="https://github.com/rouso
           <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Source Files</h3>
-              <ul><li><a href='sourcefile/check-command-line-argument.f90.html'>check-command-line-argument.f90</a></li><li><a href='sourcefile/get-flag-value.f90.html'>get-flag-value.f90</a></li><li><a href='sourcefile/handle-missing-flag.f90.html'>handle-missing-flag.f90</a></li><li><a href='sourcefile/julienne_command_line_m.f90.html'>julienne_command_line_m.f90</a></li><li><a href='sourcefile/julienne_command_line_s.f90.html'>julienne_command_line_s.f90</a></li><li><a href='sourcefile/julienne_formats_m.f90.html'>julienne_formats_m.F90</a></li><li><a href='sourcefile/julienne_formats_s.f90.html'>julienne_formats_s.F90</a></li><li><a href='sourcefile/julienne_m.f90.html'>julienne_m.f90</a></li><li><a href='sourcefile/julienne_string_m.f90.html'>julienne_string_m.f90</a></li><li><a href='sourcefile/julienne_string_s.f90.html'>julienne_string_s.f90</a></li></ul>
+              <ul><li><a href='sourcefile/check-command-line-argument.f90.html'>check-command-line-argument.f90</a></li><li><a href='sourcefile/get-flag-value.f90.html'>get-flag-value.f90</a></li><li><a href='sourcefile/handle-missing-flag.f90.html'>handle-missing-flag.f90</a></li><li><a href='sourcefile/julienne_bin_m.f90.html'>julienne_bin_m.f90</a></li><li><a href='sourcefile/julienne_bin_s.f90.html'>julienne_bin_s.f90</a></li><li><a href='sourcefile/julienne_command_line_m.f90.html'>julienne_command_line_m.f90</a></li><li><a href='sourcefile/julienne_command_line_s.f90.html'>julienne_command_line_s.f90</a></li><li><a href='sourcefile/julienne_file_m.f90.html'>julienne_file_m.f90</a></li><li><a href='sourcefile/julienne_file_s.f90.html'>julienne_file_s.f90</a></li><li><a href='sourcefile/julienne_formats_m.f90.html'>julienne_formats_m.F90</a></li></ul>
             </div>
             <div>
               <ul>
@@ -145,7 +151,7 @@ A script that could be helpful for doing so is <a href="https://github.com/rouso
           <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Modules</h3>
-              <ul><li><a href='module/julienne_command_line_m.html'>julienne_command_line_m</a></li><li><a href='module/julienne_formats_m.html'>julienne_formats_m</a></li><li><a href='module/julienne_m.html'>julienne_m</a></li><li><a href='module/julienne_string_m.html'>julienne_string_m</a></li><li><a href='module/julienne_test_description_m.html'>julienne_test_description_m</a></li><li><a href='module/julienne_test_m.html'>julienne_test_m</a></li><li><a href='module/julienne_test_result_m.html'>julienne_test_result_m</a></li><li><a href='module/julienne_user_defined_collectives_m.html'>julienne_user_defined_collectives_m</a></li><li><a href='module/julienne_vector_test_description_m.html'>julienne_vector_test_description_m</a></li></ul>
+              <ul><li><a href='module/julienne_bin_m.html'>julienne_bin_m</a></li><li><a href='module/julienne_command_line_m.html'>julienne_command_line_m</a></li><li><a href='module/julienne_file_m.html'>julienne_file_m</a></li><li><a href='module/julienne_formats_m.html'>julienne_formats_m</a></li><li><a href='module/julienne_m.html'>julienne_m</a></li><li><a href='module/julienne_string_m.html'>julienne_string_m</a></li><li><a href='module/julienne_test_description_m.html'>julienne_test_description_m</a></li><li><a href='module/julienne_test_m.html'>julienne_test_m</a></li><li><a href='module/julienne_test_result_m.html'>julienne_test_result_m</a></li><li><a href='module/julienne_user_defined_collectives_m.html'>julienne_user_defined_collectives_m</a></li></ul>
             </div>
             <div>
               <ul>
@@ -156,7 +162,7 @@ A script that could be helpful for doing so is <a href="https://github.com/rouso
           <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Procedures</h3>
-              <ul><li><a href='interface/argument_present.html'>argument_present</a></li><li><a href='interface/array_of_strings.html'>array_of_strings</a></li><li><a href='interface/as_character.html'>as_character</a></li><li><a href='interface/assign_character_to_string_t.html'>assign_character_to_string_t</a></li><li><a href='interface/assign_string_t_to_character.html'>assign_string_t_to_character</a></li><li><a href='interface/base_name.html'>base_name</a></li><li><a href='interface/character_cat_string_t.html'>character_cat_string_t</a></li><li><a href='interface/character_eq_string_t.html'>character_eq_string_t</a></li><li><a href='interface/character_ne_string_t.html'>character_ne_string_t</a></li><li><a href='interface/characterize.html'>characterize</a></li></ul>
+              <ul><li><a href='interface/argument_present.html'>argument_present</a></li><li><a href='interface/array_of_strings.html'>array_of_strings</a></li><li><a href='interface/as_character.html'>as_character</a></li><li><a href='interface/assign_character_to_string_t.html'>assign_character_to_string_t</a></li><li><a href='interface/assign_string_t_to_character.html'>assign_string_t_to_character</a></li><li><a href='interface/base_name.html'>base_name</a></li><li><a href='interface/bin_t.html'>bin_t</a></li><li><a href='interface/character_cat_string_t.html'>character_cat_string_t</a></li><li><a href='interface/character_eq_string_t.html'>character_eq_string_t</a></li><li><a href='interface/character_ne_string_t.html'>character_ne_string_t</a></li></ul>
             </div>
             <div>
               <ul>
@@ -167,7 +173,7 @@ A script that could be helpful for doing so is <a href="https://github.com/rouso
           <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Derived Types</h3>
-              <ul><li><a href='type/command_line_t.html'>command_line_t</a></li><li><a href='type/string_t.html'>string_t</a></li><li><a href='type/test_description_t.html'>test_description_t</a></li><li><a href='type/test_result_t.html'>test_result_t</a></li><li><a href='type/test_t.html'>test_t</a></li><li><a href='type/vector_function_strategy_t.html'>vector_function_strategy_t</a></li><li><a href='type/vector_test_description_t.html'>vector_test_description_t</a></li></ul>
+              <ul><li><a href='type/bin_t.html'>bin_t</a></li><li><a href='type/command_line_t.html'>command_line_t</a></li><li><a href='type/file_t.html'>file_t</a></li><li><a href='type/string_t.html'>string_t</a></li><li><a href='type/test_description_t.html'>test_description_t</a></li><li><a href='type/test_result_t.html'>test_result_t</a></li><li><a href='type/test_t.html'>test_t</a></li><li><a href='type/vector_function_strategy_t.html'>vector_function_strategy_t</a></li><li><a href='type/vector_test_description_t.html'>vector_test_description_t</a></li></ul>
             </div>
             <div>
               <ul>
@@ -191,7 +197,7 @@ A script that could be helpful for doing so is <a href="https://github.com/rouso
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-06-17 04:02              </p>
+ on 2024-06-17 17:39              </p>
           </div>
         </div>
         <br>
