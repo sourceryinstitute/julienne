@@ -1,7 +1,9 @@
 ! Copyright (c) 2024, Sourcery Institute
 ! Terms of use are as specified in LICENSE.txt
 module julienne_m
+  use julienne_bin_m, only : bin_t
   use julienne_command_line_m, only : command_line_t
+  use julienne_file_m, only : file_t
   use julienne_formats_m, only : separated_values
   use julienne_string_m, only : string_t, operator(.cat.)
   use julienne_test_m, only : test_t, test_description_substring
@@ -11,8 +13,10 @@ module julienne_m
 
   implicit none
   private
+  public :: bin_t
   public :: command_line_t
   public :: operator(.cat.)
+  public :: file_t
   public :: separated_values
   public :: string_t
   public :: test_t

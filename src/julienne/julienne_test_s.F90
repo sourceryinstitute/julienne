@@ -8,11 +8,15 @@ submodule(julienne_test_m) julienne_test_s
 contains
 
   module procedure report
-
+#ifndef __flang__
     associate(me => this_image())
+#else
+    integer me
+    me = 1
+#endif
+
 
       if (me==1) then
-
 
         first_report: &
         if (.not. allocated(test_description_substring)) then
@@ -60,7 +64,10 @@ contains
             end associate
           end block
         end associate
+#ifndef __flang__
       end associate
+#endif
+
 #else
       block
         logical, allocatable :: passing_tests(:)
@@ -76,9 +83,7 @@ contains
             end do
           end if
           passing_tests = test_results%passed()
-#ifndef __flang__
           call co_all(passing_tests)
-#endif
           associate(num_passes => count(passing_tests))
             if (me==1) print '(a,2(i0,a))'," ",num_passes," of ", num_tests," tests pass."
             passes = passes + num_passes

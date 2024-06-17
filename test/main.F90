@@ -1,13 +1,15 @@
 program main
-  use julienne_m, only : command_line_t
+  use bin_test_m, only : bin_test_t
   use command_line_test_m, only : command_line_test_t
   use formats_test_m, only : formats_test_t  
+  use julienne_m, only : command_line_t
   use string_test_m, only : string_test_t
   use test_result_test_m, only : test_result_test_t  
   use test_description_test_m, only : test_description_test_t  
   use vector_test_description_test_m, only : vector_test_description_test_t  
   implicit none
 
+  type(bin_test_t) bin_test
   type(command_line_test_t) command_line_test
   type(formats_test_t) formats_test
   type(string_test_t) string_test
@@ -29,6 +31,7 @@ program main
     if (command_line%argument_present([character(len=len("--help"))::"--help","-h"])) stop usage
   end block
 
+  call bin_test%report(passes, tests)
   call formats_test%report(passes, tests)
   call string_test%report(passes, tests)
   call test_result_test%report(passes, tests)
@@ -36,7 +39,10 @@ program main
   call vector_test_description_test%report(passes,tests)
   if (.not. GitHub_CI())  call command_line_test%report(passes, tests)
 
-  if (this_image()==1) print *, new_line('a'), "_________ In total, ",passes," of ",tests, " tests pass. _________"
+#ifndef __flang__
+  if (this_image()==1) &
+#endif
+  print *, new_line('a'), "_________ In total, ",passes," of ",tests, " tests pass. _________"
   if (passes /= tests) error stop
 contains
 

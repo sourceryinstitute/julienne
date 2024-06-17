@@ -59,11 +59,15 @@ contains
     type(test_result_t), allocatable :: test_result
     logical passed
 
+#ifndef __flang__
     if (this_image()==1) then
+#endif
       test_result = test_result_t("image 1 fails", .false.)
+#ifndef __flang__
     else
       test_result = test_result_t("all images other than 1 pass", .true.)
     end if
+#endif
 
     passed = .not. test_result%passed()
   end function
