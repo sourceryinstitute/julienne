@@ -2,12 +2,11 @@ Julienne
 ========
 
 Spun off from [Sourcery] and inspired by [Veggies], Julienne is a modern-Fortran unit-testing framework and utility for manipulating strings, including command lines and input/output format strings. 
-This repository's name derives from the term for vegetables sliced into thin strings: julienn vegetables.
-This software repository captures the authors' most frequently used thin slice of the Veggies and Sourcery repositories while avoiding certain compiler limitations.
+This repository's name derives from the term for vegetables sliced into thin strings: julienned vegetables.
+This software repository captures the authors' most frequently used thin slice of the Veggies and Sourcery repositories while avoiding certain compiler limitations of the other two repositories.
 Julienne achieves portability across compilers through minimalism and isolation.
 Thus Julienne has no external dependencies and offers limited but widely useful capabilities.
-A need for unit testing support drive the creation of Julienne.
-The string-handling capabilities are included primarily because they support Julienne's unit-testing code.
+The string-handling and command-line parsing capabilities are included primarily because they support Julienne's unit-testing code.
 
 Examples
 --------
