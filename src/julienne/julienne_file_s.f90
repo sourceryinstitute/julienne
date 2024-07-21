@@ -88,6 +88,8 @@ contains
         do line_num = 1, num_lines
           do
             read(file_unit, '(a)', advance='no', iostat=io_status, iomsg=error_message) c
+            associate(eliminate_nagfor_warning => c) ! eliminates "variable c set but never referenced" warning
+            end associate
             if (io_status==iostat_eor .or. io_status==iostat_end) exit
             lengths(line_num) = lengths(line_num) + 1
           end do
