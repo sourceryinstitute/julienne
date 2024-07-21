@@ -77,7 +77,7 @@ contains
     function line_lengths(file_unit) result(lengths)
       integer, intent(in) :: file_unit
       integer, allocatable ::  lengths(:)
-      integer io_status
+      integer io_status, l
       character(len=1) c
 
       associate(num_lines => line_count(file_unit))
@@ -85,13 +85,13 @@ contains
         allocate(lengths(num_lines), source = 0)
         rewind(file_unit)
 
-        do line_num = 1, num_lines
+        do l = 1, num_lines
           do
             read(file_unit, '(a)', advance='no', iostat=io_status, iomsg=error_message) c
-            associate(eliminate_nagfor_warning => c) ! eliminates "variable c set but never referenced" warning
+            associate(eliminate_unused_variable_warning => c) ! eliminate NAG compiler "variable c set but never referenced" warning
             end associate
             if (io_status==iostat_eor .or. io_status==iostat_end) exit
-            lengths(line_num) = lengths(line_num) + 1
+            lengths(l) = lengths(l) + 1
           end do
         end do
 
