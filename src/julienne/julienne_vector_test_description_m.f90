@@ -4,7 +4,6 @@ module julienne_vector_test_description_m
   !! Define an abstraction for describing test intentions and array-valued test functions
   use julienne_string_m, only : string_t
   use julienne_test_result_m, only : test_result_t
-  use assert_m, only : assert
   implicit none
 
   private
