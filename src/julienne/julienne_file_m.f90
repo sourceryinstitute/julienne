@@ -15,13 +15,13 @@ module julienne_file_m
 
   interface file_t
 
-    module function from_file_with_string_name(file_name) result(file_object)
+    impure elemental module function from_file_with_string_name(file_name) result(file_object)
       implicit none
       type(string_t), intent(in) :: file_name
       type(file_t) file_object
     end function
 
-    module function from_file_with_character_name(file_name) result(file_object)
+    impure elemental module function from_file_with_character_name(file_name) result(file_object)
       implicit none
       character(len=*), intent(in) :: file_name
       type(file_t) file_object
