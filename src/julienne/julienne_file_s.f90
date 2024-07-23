@@ -5,7 +5,7 @@ submodule(julienne_file_m) julienne_file_s
 
 contains
 
-  module procedure construct
+  module procedure from_string_array
     file_object%lines_ = lines
   end procedure
 
@@ -29,7 +29,11 @@ contains
     if (present(file_name)) close(file_unit)
   end procedure
   
-  module procedure read_lines
+  module procedure from_file_with_character_name
+    file_object = from_file_with_string_name(string_t(file_name))
+  end procedure
+
+  module procedure from_file_with_string_name
 
     integer io_status, file_unit, line_num
     character(len=:), allocatable :: line
