@@ -5,8 +5,12 @@ submodule(julienne_file_m) julienne_file_s
 
 contains
 
-  module procedure construct
+  module procedure from_string_array
     file_object%lines_ = lines
+  end procedure
+
+  module procedure lines
+    my_lines = self%lines_
   end procedure
 
   module procedure write_lines
@@ -29,7 +33,11 @@ contains
     if (present(file_name)) close(file_unit)
   end procedure
   
-  module procedure read_lines
+  module procedure from_file_with_character_name
+    file_object = from_file_with_string_name(string_t(file_name))
+  end procedure
+
+  module procedure from_file_with_string_name
 
     integer io_status, file_unit, line_num
     character(len=:), allocatable :: line
@@ -38,7 +46,7 @@ contains
     integer, allocatable :: lengths(:)
 
     open(newunit=file_unit, file=file_name%string(), form='formatted', status='old', iostat=io_status, action='read')
-    call assert(io_status==0,"read_lines: io_status==0 after 'open' statement", file_name%string())
+    call assert(io_status==0,"from_file_with_string_name: io_status==0 after 'open' statement", file_name%string())
 
     lengths = line_lengths(file_unit)
 
@@ -48,8 +56,7 @@ contains
   
       do line_num = 1, num_lines
         allocate(character(len=lengths(line_num)) :: line)
-        read(file_unit, '(a)', iostat=io_status, iomsg=error_message) line
-        call assert(io_status==0,"read_lines: io_status==0 after line read", error_message)
+        read(file_unit, '(a)') line
         file_object%lines_(line_num) = string_t(line)
         deallocate(line)
       end do
@@ -100,10 +107,6 @@ contains
       end associate
     end function
 
-  end procedure
-
-  module procedure lines
-    my_lines = self%lines_
   end procedure
 
 end submodule julienne_file_s
