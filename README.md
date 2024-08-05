@@ -14,7 +14,7 @@ For examples of how to use Julienne, please see the [examples](./examples) subdi
 
 Building and Testing
 --------------------
-### GNU (`gfortran`)
+### GNU (`gfortran`) 13 or higher required
 ```
 fpm test
 ```

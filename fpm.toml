@@ -7,3 +7,6 @@ copyright = "Copyright 2024, Sourcery Institute"
 
 [dependencies]
 assert = {git = "https://github.com/sourceryinstitute/assert", tag = "1.7.0"}
+
+[install]
+library = true

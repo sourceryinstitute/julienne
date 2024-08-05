@@ -1,4 +1,4 @@
-! Copyright (c) 2024, Sourcery Institute
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
 ! Terms of use are as specified in LICENSE.txt
 module julienne_test_result_m
   !! Define an abstraction for describing test intentions and results
@@ -10,7 +10,7 @@ module julienne_test_result_m
 
   type test_result_t
     !! Encapsulate test descriptions and outcomes
-    !private
+    private
     type(string_t) description_
     logical passed_ 
   contains

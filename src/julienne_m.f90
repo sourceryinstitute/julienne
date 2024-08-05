@@ -1,4 +1,4 @@
-! Copyright (c) 2024, Sourcery Institute
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
 ! Terms of use are as specified in LICENSE.txt
 module julienne_m
   use julienne_bin_m, only : bin_t

@@ -1,4 +1,5 @@
 submodule(julienne_vector_test_description_m) julienne_vector_test_description_s
+  use assert_m, only : assert
   implicit none
 
 contains
