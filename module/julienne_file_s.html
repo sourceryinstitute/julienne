@@ -79,7 +79,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 7.9% of total for modules and submodules.">78 statements</a>
+                 title=" 7.7% of total for modules and submodules.">82 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -132,9 +132,10 @@
       </a>
       <div id="modprocs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/julienne_file_s.html#proc-construct~3">construct</a>
+            <a class="list-group-item" href="../module/julienne_file_s.html#proc-from_file_with_character_name">from_file_with_character_name</a>
+            <a class="list-group-item" href="../module/julienne_file_s.html#proc-from_file_with_string_name">from_file_with_string_name</a>
+            <a class="list-group-item" href="../module/julienne_file_s.html#proc-from_string_array">from_string_array</a>
             <a class="list-group-item" href="../module/julienne_file_s.html#proc-lines">lines</a>
-            <a class="list-group-item" href="../module/julienne_file_s.html#proc-read_lines">read_lines</a>
             <a class="list-group-item" href="../module/julienne_file_s.html#proc-write_lines">write_lines</a>
         </div>
       </div>
@@ -344,7 +345,97 @@ large graphs.</div>
         <section>
           <h2>Module Procedures</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-construct~3"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_file_s.html <a href='../proc/construct~3.html'>construct</a> <small>pure module function construct(lines) result(file_object)</small>  
+    <div class="card-header codesum"><span class="anchor" id="proc-from_file_with_character_name"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_file_s.html <a href='../proc/from_file_with_character_name.html'>from_file_with_character_name</a> <small>impure elemental module function from_file_with_character_name(file_name) result(file_object)</small>  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/file_t.html'>file_t</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-from_file_with_string_name"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_file_s.html <a href='../proc/from_file_with_string_name.html'>from_file_with_string_name</a> <small>impure elemental module function from_file_with_string_name(file_name) result(file_object)</small>  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name"></span>
+              type(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/file_t.html'>file_t</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-from_string_array"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_file_s.html <a href='../proc/from_string_array.html'>from_string_array</a> <small>pure module function from_string_array(lines) result(file_object)</small>  
 </h3></div>
     <div class="card-body">
           
@@ -409,7 +500,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~8"></span>
+              <span class="anchor" id="variable-self~10"></span>
               class(<a href='../type/file_t.html'>file_t</a>),
             </td>
 <td>intent(in)</td>
@@ -428,51 +519,6 @@ large graphs.</div>
     <h4>
     Return Value
     <small>type(<a href='../type/string_t.html'>string_t</a>), allocatable, (:)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-read_lines"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_file_s.html <a href='../proc/read_lines.html'>read_lines</a> <small>module function read_lines(file_name) result(file_object)</small>  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-file_name"></span>
-              type(<a href='../type/string_t.html'>string_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>file_name</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>type(<a href='../type/file_t.html'>file_t</a>)</small>
     </h4>
     
 
@@ -500,7 +546,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~9"></span>
+              <span class="anchor" id="variable-self~11"></span>
               class(<a href='../type/file_t.html'>file_t</a>),
             </td>
 <td>intent(in)</td>
@@ -515,7 +561,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~2"></span>
+              <span class="anchor" id="variable-file_name~3"></span>
               type(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in),</td>
@@ -554,7 +600,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-07-09 23:01              </p>
+ on 2024-08-12 19:38              </p>
           </div>
         </div>
         <br>
