@@ -1,10 +1,9 @@
-! Copyright (c) 2024, Sourcery Institute
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
 ! Terms of use are as specified in LICENSE.txt
 module julienne_vector_test_description_m
   !! Define an abstraction for describing test intentions and array-valued test functions
   use julienne_string_m, only : string_t
   use julienne_test_result_m, only : test_result_t
-  use assert_m, only : assert
   implicit none
 
   private

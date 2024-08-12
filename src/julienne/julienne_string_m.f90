@@ -1,4 +1,4 @@
-! Copyright (c) 2024, Sourcery Institute
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
 ! Terms of use are as specified in LICENSE.txt
 module julienne_string_m
   use assert_m, only : characterizable_t
@@ -23,10 +23,18 @@ module julienne_string_m
     generic :: operator(/=)   => string_t_ne_string_t, string_t_ne_character, character_ne_string_t
     generic :: operator(==)   => string_t_eq_string_t, string_t_eq_character, character_eq_string_t
     generic :: assignment(= ) => assign_string_t_to_character, assign_character_to_string_t
-    generic :: get_json_value =>     get_json_integer_array, get_json_logical, get_json_integer, get_json_string, get_json_real, &
-                                     get_json_real_array
-    procedure, private            :: get_json_integer_array, get_json_logical, get_json_integer, get_json_string, get_json_real, &
-                                     get_json_real_array
+    generic :: get_json_value => get_real, get_real_with_character_key & 
+                                ,get_string, get_string_with_character_key & 
+                                ,get_logical, get_logical_with_character_key  &
+                                ,get_real_array ,get_real_array_with_character_key &
+                                ,get_integer_array, get_integer_array_with_character_key &
+                                ,get_integer, get_integer_with_character_key
+    procedure, private :: get_real, get_real_with_character_key
+    procedure, private :: get_string, get_string_with_character_key
+    procedure, private :: get_logical, get_logical_with_character_key
+    procedure, private :: get_integer, get_integer_with_character_key
+    procedure, private :: get_real_array, get_real_array_with_character_key
+    procedure, private :: get_integer_array, get_integer_array_with_character_key
     procedure, private            :: string_t_ne_string_t, string_t_ne_character
     procedure, private            :: string_t_eq_string_t, string_t_eq_character
     procedure, private            :: assign_character_to_string_t
@@ -106,41 +114,88 @@ module julienne_string_m
       type(string_t) base
     end function
 
-    pure module function get_json_real(self, key, mold) result(value_)
+    pure module function get_real(self, key, mold) result(value_)
       implicit none
       class(string_t), intent(in) :: self, key
       real, intent(in) :: mold
       real value_
     end function
 
-    elemental module function get_json_string(self, key, mold) result(value_)
+    pure module function get_real_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
+      character(len=*), intent(in) :: key
+      real, intent(in) :: mold
+      real value_
+    end function
+
+    elemental module function get_string_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self, mold
+      character(len=*), intent(in) :: key
+      type(string_t) :: value_
+    end function
+
+    elemental module function get_string(self, key, mold) result(value_)
       implicit none
       class(string_t), intent(in) :: self, key, mold
       type(string_t) :: value_
     end function
 
-    pure module function get_json_integer(self, key, mold) result(value_)
+    pure module function get_integer_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
+      character(len=*), intent(in) :: key
+      integer, intent(in) ::  mold
+      integer value_
+    end function
+
+    pure module function get_integer(self, key, mold) result(value_)
       implicit none
       class(string_t), intent(in) :: self, key
       integer, intent(in) ::  mold
       integer value_
     end function
 
-    elemental module function get_json_logical(self, key, mold) result(value_)
+    pure module function get_logical_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
+      character(len=*), intent(in) :: key
+      logical, intent(in) :: mold
+      logical value_
+    end function
+
+    elemental module function get_logical(self, key, mold) result(value_)
       implicit none
       class(string_t), intent(in) :: self, key
       logical, intent(in) :: mold
       logical value_
     end function
 
-    pure module function get_json_integer_array(self, key, mold) result(value_)
+    pure module function get_integer_array_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
+      character(len=*), intent(in) :: key
+      integer, intent(in) :: mold(:)
+      integer, allocatable :: value_(:)
+    end function
+
+    pure module function get_integer_array(self, key, mold) result(value_)
       implicit none
       class(string_t), intent(in) :: self, key
       integer, intent(in) :: mold(:)
       integer, allocatable :: value_(:)
     end function
 
-    pure module function get_json_real_array(self, key, mold) result(value_)
+    pure module function get_real_array_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
+      character(len=*), intent(in) :: key
+      real, intent(in) :: mold(:)
+      real, allocatable :: value_(:)
+    end function
+
+    pure module function get_real_array(self, key, mold) result(value_)
       implicit none
       class(string_t), intent(in) :: self, key
       real, intent(in) :: mold(:)
