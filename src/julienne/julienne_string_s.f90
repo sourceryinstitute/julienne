@@ -102,6 +102,10 @@ contains
     end associate
   end procedure
 
+  module procedure get_real_with_character_key
+    value_ = self%get_real(string_t(key), mold)
+  end procedure
+
   module procedure get_real
     character(len=:), allocatable :: raw_line, string_value
 
@@ -119,6 +123,10 @@ contains
       end associate
     end associate
 
+  end procedure
+
+  module procedure get_string_with_character_key
+    value_ = self%get_string(string_t(key), mold)
   end procedure
 
   module procedure get_string
@@ -140,6 +148,10 @@ contains
       end associate
     end associate
 
+  end procedure
+
+  module procedure get_logical_with_character_key
+    value_ = self%get_logical(string_t(key), mold)
   end procedure
 
   module procedure get_logical
@@ -182,8 +194,20 @@ contains
 
   end procedure
 
+  module procedure get_integer_with_character_key
+    value_ = self%get_integer(string_t(key), mold)
+  end procedure
+
+  module procedure get_integer_array_with_character_key
+    value_ = int(self%get_integer_array(string_t(key), mold))
+  end procedure
+
   module procedure get_integer_array
     value_ = int(self%get_real_array(key,mold=[0.]))
+  end procedure
+
+  module procedure get_real_array_with_character_key
+    value_ = self%get_real_array(string_t(key), mold)
   end procedure
 
   module procedure get_real_array
