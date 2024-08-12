@@ -22,13 +22,13 @@ contains
     integer, parameter :: sign_width = 1, digits_width = range(i) + 1
     character(len = digits_width + sign_width) characters
     write(characters, '(i0)') i
-    string = string_t(characters)
+    string = string_t(trim(characters))
   end procedure
 
   module procedure from_real
     character(len=100) characters
     write(characters, '(g0)') x
-    string = string_t(characters)
+    string = string_t(trim(characters))
   end procedure
 
   module procedure concatenate_elements
