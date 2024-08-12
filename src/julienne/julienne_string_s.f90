@@ -22,13 +22,13 @@ contains
     integer, parameter :: sign_width = 1, digits_width = range(i) + 1
     character(len = digits_width + sign_width) characters
     write(characters, '(i0)') i
-    string = string_t(characters)
+    string = string_t(trim(characters))
   end procedure
 
   module procedure from_real
     character(len=100) characters
     write(characters, '(g0)') x
-    string = string_t(characters)
+    string = string_t(trim(characters))
   end procedure
 
   module procedure concatenate_elements
@@ -102,10 +102,14 @@ contains
     end associate
   end procedure
 
-  module procedure get_json_real
+  module procedure get_real_with_character_key
+    value_ = self%get_real(string_t(key), mold)
+  end procedure
+
+  module procedure get_real
     character(len=:), allocatable :: raw_line, string_value
 
-    call assert(key==self%get_json_key(), "string_s(get_json_real): key==self%get_json_key()", key)
+    call assert(key==self%get_json_key(), "string_s(get_real): key==self%get_json_key()", key)
 
     raw_line = self%string()
     associate(text_after_colon => raw_line(index(raw_line, ':')+1:))
@@ -121,7 +125,11 @@ contains
 
   end procedure
 
-  module procedure get_json_string
+  module procedure get_string_with_character_key
+    value_ = self%get_string(string_t(key), mold)
+  end procedure
+
+  module procedure get_string
 
     character(len=:), allocatable :: raw_line
 
@@ -142,10 +150,14 @@ contains
 
   end procedure
 
-  module procedure get_json_logical
+  module procedure get_logical_with_character_key
+    value_ = self%get_logical(string_t(key), mold)
+  end procedure
+
+  module procedure get_logical
     character(len=:), allocatable :: raw_line, string_value
 
-    call assert(key==self%get_json_key(), "string_s(get_json_logical): key==self%get_json_key()", key)
+    call assert(key==self%get_json_key(), "string_s(get_logical): key==self%get_json_key()", key)
 
     raw_line = self%string()
     associate(text_after_colon => raw_line(index(raw_line, ':')+1:))
@@ -156,17 +168,17 @@ contains
           string_value = trim(adjustl((text_after_colon(:trailing_comma-1))))
         end if
         call assert(string_value=="true" .or. string_value=="false", &
-          'string_s(get_json_logical): string_value=="true" .or. string_value="false"', string_value)
+          'string_s(get_logical): string_value=="true" .or. string_value="false"', string_value)
         value_ = string_value == "true"
       end associate
     end associate
 
   end procedure
 
-  module procedure get_json_integer
+  module procedure get_integer
     character(len=:), allocatable :: raw_line, string_value
 
-    call assert(key==self%get_json_key(), "string_s(get_json_logical): key==self%get_json_key()", key)
+    call assert(key==self%get_json_key(), "string_s(get_logical): key==self%get_json_key()", key)
 
     raw_line = self%string()
     associate(text_after_colon => raw_line(index(raw_line, ':')+1:))
@@ -182,16 +194,28 @@ contains
 
   end procedure
 
-  module procedure get_json_integer_array
-    value_ = int(self%get_json_real_array(key,mold=[0.]))
+  module procedure get_integer_with_character_key
+    value_ = self%get_integer(string_t(key), mold)
   end procedure
 
-  module procedure get_json_real_array
+  module procedure get_integer_array_with_character_key
+    value_ = int(self%get_integer_array(string_t(key), mold))
+  end procedure
+
+  module procedure get_integer_array
+    value_ = int(self%get_real_array(key,mold=[0.]))
+  end procedure
+
+  module procedure get_real_array_with_character_key
+    value_ = self%get_real_array(string_t(key), mold)
+  end procedure
+
+  module procedure get_real_array
     character(len=:), allocatable :: raw_line
     real, allocatable :: real_array(:)
     integer i
 
-    call assert(key==self%get_json_key(), "string_s(get_json_{real,integer}_array): key==self%get_json_key()", key)
+    call assert(key==self%get_json_key(), "string_s(get_{real,integer}_array): key==self%get_json_key()", key)
 
     raw_line = self%string()
     associate(colon => index(raw_line, ":"))
