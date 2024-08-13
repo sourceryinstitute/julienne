@@ -54,6 +54,8 @@ contains
       test_description_t &
         (string_t("extracting a string value from a colon-separated key/value pair"), extracts_string_value), &
       test_description_t &
+        (string_t("extracting a string value from a colon-separated key/value pair"), extracts_character_value), &
+      test_description_t &
         (string_t("extracting a logical value from a colon-separated key/value pair"), extracts_logical_value), &
       test_description_t &
         (string_t("extracting an integer array value from a colon-separated key/value pair"), extracts_integer_array_value), &
@@ -72,7 +74,7 @@ contains
       check_allocation_ptr, supports_equivalence_ptr, supports_non_equivalence_ptr, supports_concatenation_ptr, &
       assigns_string_ptr, assigns_character_ptr, constructs_from_integer_ptr, constructs_from_real_ptr, concatenates_ptr, &
       extracts_key_ptr, extracts_real_ptr, extracts_string_ptr, extracts_logical_ptr, extracts_integer_array_ptr, &
-      extracts_real_array_ptr, extracts_integer_ptr, extracts_file_base_ptr, extracts_file_name_ptr
+      extracts_real_array_ptr, extracts_integer_ptr, extracts_file_base_ptr, extracts_file_name_ptr, extracts_character_ptr
 
     check_allocation_ptr => check_allocation
     supports_equivalence_ptr => supports_equivalence_operator
@@ -86,6 +88,7 @@ contains
     extracts_key_ptr => extracts_key
     extracts_real_ptr => extracts_real_value
     extracts_string_ptr => extracts_string_value
+    extracts_character_ptr => extracts_character_value
     extracts_logical_ptr => extracts_logical_value
     extracts_integer_array_ptr  => extracts_integer_array_value
     extracts_real_array_ptr => extracts_real_array_value
@@ -109,6 +112,7 @@ contains
       test_description_t(string_t("extracting a key string from a colon-separated key/value pair"), extracts_key_ptr), &
       test_description_t(string_t("extracting a real value from a colon-separated key/value pair"), extracts_real_ptr), &
       test_description_t(string_t("extracting a string value from a colon-separated key/value pair"), extracts_string_ptr), &
+      test_description_t(string_t("extracting a character value from a colon-separated key/value pair"), extracts_character_ptr), &
       test_description_t(string_t("extracting a logical value from a colon-separated key/value pair"), extracts_logical_ptr), &
       test_description_t( &
         string_t("extracting an integer array value from a colon-separated key/value pair"), extracts_integer_array_ptr), &
@@ -163,6 +167,29 @@ contains
       type(string_t) line
       line = string_t('"pi" : 3.14159')
       passed = line%get_json_value(key=string_t("pi"), mold=1.) == 3.14159
+    end block
+#endif
+  end function
+
+  function extracts_character_value() result(passed)
+    logical passed
+
+#ifndef _CRAYFTN
+    associate(line => string_t('"foo" : "bar"'), line_with_comma => string_t('"foo" : "bar",'))
+      passed = line%get_json_value(key=string_t("foo"), mold="") == "bar" .and. &
+               line%get_json_value(key="foo" , mold="") == "bar" .and. &
+               line_with_comma%get_json_value(key=string_t("foo"), mold="") == "bar" .and. &
+               line_with_comma%get_json_value(key="foo" , mold="") == "bar"
+    end associate
+#else
+    block
+      type(string_t) line, line_with_comma
+      line = string_t('"foo" : "bar"')
+      line_with_comma = string_t('"foo" : "bar",')
+      passed = line%get_json_value(key=string_t("foo"), mold="") == "bar" .and. &
+               line%get_json_value(key="foo" , mold="") == "bar" .and. &
+               line_with_comma%get_json_value(key=string_t("foo"), mold="") == "bar" .and. &
+               line_with_comma%get_json_value(key="foo" , mold="") == "bar"
     end block
 #endif
   end function
