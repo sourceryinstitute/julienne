@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 module string_test_m
   use julienne_m, only : test_t, test_result_t, string_t, operator(.cat.), test_description_t, test_description_substring
 #ifdef __GFORTRAN__

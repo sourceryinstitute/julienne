@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 module formats_test_m
   !! Verify that format strings provide the desired formatting
   use julienne_m, only : separated_values, test_t, test_result_t, test_description_t, test_description_substring, string_t
