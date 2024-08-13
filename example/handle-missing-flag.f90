@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 program handle_missing_flag
   !! This program serves the dual purposes of
   !!
