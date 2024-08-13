@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 module vector_test_description_test_m
   !! Verify vector_test_description_t object behavior
   use julienne_m, only : &

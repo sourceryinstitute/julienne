@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 program main
   use bin_test_m, only : bin_test_t
   use command_line_test_m, only : command_line_test_t
