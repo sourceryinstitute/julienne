@@ -79,7 +79,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="20.4% of total for modules and submodules.">217 statements</a>
+                 title="21.8% of total for modules and submodules.">242 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -141,10 +141,14 @@
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-character_eq_string_t">character_eq_string_t</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-character_ne_string_t">character_ne_string_t</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-concatenate_elements">concatenate_elements</a>
-            <a class="list-group-item" href="../module/julienne_string_s.html#proc-construct">construct</a>
+            <a class="list-group-item" href="../module/julienne_string_s.html#proc-construct~3">construct</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-file_extension">file_extension</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-from_default_integer">from_default_integer</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-from_real">from_real</a>
+            <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_character">get_character</a>
+            <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_character_with_character_key">get_character_with_character_key</a>
+            <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_double_precision">get_double_precision</a>
+            <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_double_precision_with_character_key">get_double_precision_with_character_key</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_integer">get_integer</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_integer_array">get_integer_array</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_integer_array_with_character_key">get_integer_array_with_character_key</a>
@@ -157,7 +161,6 @@
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_real_array_with_character_key">get_real_array_with_character_key</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_real_with_character_key">get_real_with_character_key</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_string">get_string</a>
-            <a class="list-group-item" href="../module/julienne_string_s.html#proc-get_string_with_character_key">get_string_with_character_key</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-is_allocated">is_allocated</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-string_t_cat_character">string_t_cat_character</a>
             <a class="list-group-item" href="../module/julienne_string_s.html#proc-string_t_cat_string_t">string_t_cat_string_t</a>
@@ -423,7 +426,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~12"></span>
+              <span class="anchor" id="variable-self"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -469,7 +472,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~12"></span>
+              <span class="anchor" id="variable-lhs~10"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -484,7 +487,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~12"></span>
+              <span class="anchor" id="variable-rhs~10"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -525,7 +528,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~13"></span>
+              <span class="anchor" id="variable-lhs~11"></span>
               character(len=:),
             </td>
 <td>intent(out),</td>
@@ -540,7 +543,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~13"></span>
+              <span class="anchor" id="variable-rhs~11"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -581,7 +584,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~16"></span>
+              <span class="anchor" id="variable-self~5"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -627,7 +630,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~11"></span>
+              <span class="anchor" id="variable-lhs~9"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -642,7 +645,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~11"></span>
+              <span class="anchor" id="variable-rhs~9"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -688,7 +691,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~5"></span>
+              <span class="anchor" id="variable-lhs~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -703,7 +706,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~5"></span>
+              <span class="anchor" id="variable-rhs~3"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -749,7 +752,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~8"></span>
+              <span class="anchor" id="variable-lhs~6"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -764,7 +767,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~8"></span>
+              <span class="anchor" id="variable-rhs~6"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -835,7 +838,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-construct"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/construct.html'>construct</a> <small>elemental module function construct(string) result(new_string)</small>  
+    <div class="card-header codesum"><span class="anchor" id="proc-construct~3"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/construct~3.html'>construct</a> <small>elemental module function construct(string) result(new_string)</small>  
 </h3></div>
     <div class="card-body">
           
@@ -900,7 +903,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~15"></span>
+              <span class="anchor" id="variable-self~4"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -945,7 +948,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-i~2"></span>
+              <span class="anchor" id="variable-i"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1016,6 +1019,310 @@ large graphs.</div>
   </div>
 
               <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_character"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/get_character.html'>get_character</a> <small>pure module function get_character(self, key, mold) result(value_)</small>  
+    <a href="../interface/get_character.html"><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-self~10"></span>
+              class(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-key~5"></span>
+              class(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mold~5"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mold</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>character(len=:), allocatable</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_character_with_character_key"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/get_character_with_character_key.html'>get_character_with_character_key</a> <small>pure module function get_character_with_character_key(self, key, mold) result(value_)</small>  
+    <a href="../interface/get_character_with_character_key.html"><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-self~11"></span>
+              class(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-key~6"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mold~6"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mold</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>character(len=:), allocatable</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_double_precision"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/get_double_precision.html'>get_double_precision</a> <small>pure module function get_double_precision(self, key, mold) result(value_)</small>  
+    <a href="../interface/get_double_precision.html"><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-self~8"></span>
+              class(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-key~3"></span>
+              class(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mold~3"></span>
+              double precision,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mold</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>double precision</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_double_precision_with_character_key"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/get_double_precision_with_character_key.html'>get_double_precision_with_character_key</a> <small>pure module function get_double_precision_with_character_key(self, key, mold) result(value_)</small>  
+    <a href="../interface/get_double_precision_with_character_key.html"><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-self~9"></span>
+              class(<a href='../type/string_t.html'>string_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-key~4"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>key</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mold~4"></span>
+              double precision,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mold</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>double precision</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
     <div class="card-header codesum"><span class="anchor" id="proc-get_integer"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/get_integer.html'>get_integer</a> <small>pure module function get_integer(self, key, mold) result(value_)</small>  
     <a href="../interface/get_integer.html"><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
@@ -1036,7 +1343,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~22"></span>
+              <span class="anchor" id="variable-self~14"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1051,7 +1358,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~6"></span>
+              <span class="anchor" id="variable-key~9"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1066,7 +1373,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~6"></span>
+              <span class="anchor" id="variable-mold~9"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1112,7 +1419,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~26"></span>
+              <span class="anchor" id="variable-self~18"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1127,7 +1434,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~10"></span>
+              <span class="anchor" id="variable-key~13"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1142,7 +1449,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~10"></span>
+              <span class="anchor" id="variable-mold~13"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1188,7 +1495,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~25"></span>
+              <span class="anchor" id="variable-self~17"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1203,7 +1510,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~9"></span>
+              <span class="anchor" id="variable-key~12"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1218,7 +1525,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~9"></span>
+              <span class="anchor" id="variable-mold~12"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1264,7 +1571,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~21"></span>
+              <span class="anchor" id="variable-self~13"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1279,7 +1586,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~5"></span>
+              <span class="anchor" id="variable-key~8"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1294,7 +1601,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~5"></span>
+              <span class="anchor" id="variable-mold~8"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1340,7 +1647,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~14"></span>
+              <span class="anchor" id="variable-self~3"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1386,7 +1693,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~24"></span>
+              <span class="anchor" id="variable-self~16"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1401,7 +1708,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~8"></span>
+              <span class="anchor" id="variable-key~11"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1416,7 +1723,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~8"></span>
+              <span class="anchor" id="variable-mold~11"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -1462,7 +1769,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~23"></span>
+              <span class="anchor" id="variable-self~15"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1477,7 +1784,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~7"></span>
+              <span class="anchor" id="variable-key~10"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1492,7 +1799,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~7"></span>
+              <span class="anchor" id="variable-mold~10"></span>
               logical,
             </td>
 <td>intent(in)</td>
@@ -1538,7 +1845,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~17"></span>
+              <span class="anchor" id="variable-self~6"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1614,7 +1921,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~28"></span>
+              <span class="anchor" id="variable-self~20"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1629,7 +1936,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~12"></span>
+              <span class="anchor" id="variable-key~15"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1644,7 +1951,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~12"></span>
+              <span class="anchor" id="variable-mold~15"></span>
               real,
             </td>
 <td>intent(in)</td>
@@ -1690,7 +1997,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~27"></span>
+              <span class="anchor" id="variable-self~19"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1705,7 +2012,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~11"></span>
+              <span class="anchor" id="variable-key~14"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1720,7 +2027,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~11"></span>
+              <span class="anchor" id="variable-mold~14"></span>
               real,
             </td>
 <td>intent(in)</td>
@@ -1766,7 +2073,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~18"></span>
+              <span class="anchor" id="variable-self~7"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1842,7 +2149,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~20"></span>
+              <span class="anchor" id="variable-self~12"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1857,7 +2164,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-key~4"></span>
+              <span class="anchor" id="variable-key~7"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1872,83 +2179,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-mold~4"></span>
-              class(<a href='../type/string_t.html'>string_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>mold</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>type(<a href='../type/string_t.html'>string_t</a>)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_string_with_character_key"></span> <h3>module procedure /home/runner/work/julienne/julienne/doc/html/module/julienne_string_s.html <a href='../proc/get_string_with_character_key.html'>get_string_with_character_key</a> <small>elemental module function get_string_with_character_key(self, key, mold) result(value_)</small>  
-    <a href="../interface/get_string_with_character_key.html"><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-self~19"></span>
-              class(<a href='../type/string_t.html'>string_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>self</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-key~3"></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>key</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-mold~3"></span>
+              <span class="anchor" id="variable-mold~7"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1994,7 +2225,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~13"></span>
+              <span class="anchor" id="variable-self~2"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2040,7 +2271,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~10"></span>
+              <span class="anchor" id="variable-lhs~8"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2055,7 +2286,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~10"></span>
+              <span class="anchor" id="variable-rhs~8"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2101,7 +2332,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~9"></span>
+              <span class="anchor" id="variable-lhs~7"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2116,7 +2347,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~9"></span>
+              <span class="anchor" id="variable-rhs~7"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2162,7 +2393,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~4"></span>
+              <span class="anchor" id="variable-lhs~2"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2177,7 +2408,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~4"></span>
+              <span class="anchor" id="variable-rhs~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2223,7 +2454,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~3"></span>
+              <span class="anchor" id="variable-lhs"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2238,7 +2469,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~3"></span>
+              <span class="anchor" id="variable-rhs"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2284,7 +2515,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~7"></span>
+              <span class="anchor" id="variable-lhs~5"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2299,7 +2530,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~7"></span>
+              <span class="anchor" id="variable-rhs~5"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2345,7 +2576,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-lhs~6"></span>
+              <span class="anchor" id="variable-lhs~4"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2360,7 +2591,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rhs~6"></span>
+              <span class="anchor" id="variable-rhs~4"></span>
               class(<a href='../type/string_t.html'>string_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2404,7 +2635,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-08-12 19:38              </p>
+ on 2024-09-01 06:32              </p>
           </div>
         </div>
         <br>

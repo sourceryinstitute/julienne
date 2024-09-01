@@ -106,10 +106,33 @@ contains
     value_ = self%get_real(string_t(key), mold)
   end procedure
 
+  module procedure get_double_precision_with_character_key
+    value_ = self%get_double_precision(string_t(key), mold)
+  end procedure
+
   module procedure get_real
     character(len=:), allocatable :: raw_line, string_value
 
     call assert(key==self%get_json_key(), "string_s(get_real): key==self%get_json_key()", key)
+
+    raw_line = self%string()
+    associate(text_after_colon => raw_line(index(raw_line, ':')+1:))
+      associate(trailing_comma => index(text_after_colon, ','))
+        if (trailing_comma == 0) then
+          string_value = trim(adjustl((text_after_colon)))
+        else
+          string_value = trim(adjustl((text_after_colon(:trailing_comma-1))))
+        end if
+        read(string_value, fmt=*) value_
+      end associate
+    end associate
+
+  end procedure
+
+  module procedure get_double_precision
+    character(len=:), allocatable :: raw_line, string_value
+
+    call assert(key==self%get_json_key(), "string_s(get_double_precision): key==self%get_json_key()", key)
 
     raw_line = self%string()
     associate(text_after_colon => raw_line(index(raw_line, ':')+1:))
@@ -125,8 +148,16 @@ contains
 
   end procedure
 
-  module procedure get_string_with_character_key
-    value_ = self%get_string(string_t(key), mold)
+  module procedure get_character
+    associate(string_value => self%get_string(key, string_t(mold)))
+      value_ = string_value%string()
+    end associate
+  end procedure
+
+  module procedure get_character_with_character_key
+    associate(string_value => self%get_string(string_t(key), string_t(mold)))
+      value_ = string_value%string()
+    end associate
   end procedure
 
   module procedure get_string
