@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 program check_command_line_argument
   !! This program serves the dual purposes of 
   !! 1. Showing how to use the command_line_t derived type to check whether a

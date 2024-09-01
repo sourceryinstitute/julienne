@@ -23,22 +23,26 @@ module julienne_string_m
     generic :: operator(/=)   => string_t_ne_string_t, string_t_ne_character, character_ne_string_t
     generic :: operator(==)   => string_t_eq_string_t, string_t_eq_character, character_eq_string_t
     generic :: assignment(= ) => assign_string_t_to_character, assign_character_to_string_t
-    generic :: get_json_value => get_real, get_real_with_character_key & 
-                                ,get_string, get_string_with_character_key & 
+    generic :: get_json_value => get_string &
+                                ,get_real, get_real_with_character_key &
+                                ,get_character, get_character_with_character_key &
                                 ,get_logical, get_logical_with_character_key  &
                                 ,get_real_array ,get_real_array_with_character_key &
                                 ,get_integer_array, get_integer_array_with_character_key &
-                                ,get_integer, get_integer_with_character_key
+                                ,get_integer, get_integer_with_character_key &
+                                ,get_double_precision, get_double_precision_with_character_key
     procedure, private :: get_real, get_real_with_character_key
-    procedure, private :: get_string, get_string_with_character_key
+    procedure, private :: get_string
     procedure, private :: get_logical, get_logical_with_character_key
     procedure, private :: get_integer, get_integer_with_character_key
     procedure, private :: get_real_array, get_real_array_with_character_key
     procedure, private :: get_integer_array, get_integer_array_with_character_key
-    procedure, private            :: string_t_ne_string_t, string_t_ne_character
-    procedure, private            :: string_t_eq_string_t, string_t_eq_character
-    procedure, private            :: assign_character_to_string_t
-    procedure, private            :: string_t_cat_string_t, string_t_cat_character
+    procedure, private :: get_character, get_character_with_character_key
+    procedure :: get_double_precision, get_double_precision_with_character_key
+    procedure, private :: string_t_ne_string_t, string_t_ne_character
+    procedure, private :: string_t_eq_string_t, string_t_eq_character
+    procedure, private :: assign_character_to_string_t
+    procedure, private :: string_t_cat_string_t, string_t_cat_character
     procedure, private, pass(rhs) :: character_cat_string_t
     procedure, private, pass(rhs) :: character_ne_string_t
     procedure, private, pass(rhs) :: character_eq_string_t
@@ -129,11 +133,33 @@ module julienne_string_m
       real value_
     end function
 
-    elemental module function get_string_with_character_key(self, key, mold) result(value_)
+    pure module function get_double_precision(self, key, mold) result(value_)
       implicit none
-      class(string_t), intent(in) :: self, mold
+      class(string_t), intent(in) :: self, key
+      double precision, intent(in) :: mold
+      double precision value_
+    end function
+
+    pure module function get_double_precision_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
       character(len=*), intent(in) :: key
-      type(string_t) :: value_
+      double precision, intent(in) :: mold
+      double precision value_
+    end function
+
+    pure module function get_character(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self, key
+      character(len=*), intent(in) :: mold
+      character(len=:), allocatable :: value_
+    end function
+
+    pure module function get_character_with_character_key(self, key, mold) result(value_)
+      implicit none
+      class(string_t), intent(in) :: self
+      character(len=*), intent(in) :: key, mold
+      character(len=:), allocatable :: value_
     end function
 
     elemental module function get_string(self, key, mold) result(value_)

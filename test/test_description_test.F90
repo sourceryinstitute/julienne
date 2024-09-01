@@ -1,3 +1,5 @@
+! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
+! Terms of use are as specified in LICENSE.txt
 module test_description_test_m
   !! Verify test_description_t object behavior
   use julienne_m, only : string_t, test_result_t, test_description_t, test_t, test_description_substring
