@@ -1,9 +1,9 @@
 name = "julienne"
-version = "1.1.0"
+version = "1.2.0"
 license = "license"
 author = "Damian Rouson, Brad Richardson, Patrick Raynaud, Katherine Rasmussen"
-maintainer = "damian@sourceryinstitute.org"
-copyright = "Copyright 2024, Sourcery Institute"
+maintainer = "rouson@lbl.gov"
+copyright = "Copyright 2024, Sourcery Institute and Berkeley Lab"
 
 [dependencies]
 assert = {git = "https://github.com/sourceryinstitute/assert", tag = "1.7.0"}
