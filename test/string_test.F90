@@ -64,6 +64,8 @@ contains
       test_description_t &
         (string_t("extracting an real array value from a colon-separated key/value pair"), extracts_real_array_value), &
       test_description_t &
+        (string_t("extracting an double-precision array value from a colon-separated key/value pair"), extracts_dp_array_value), &
+      test_description_t &
         (string_t("extracting an integer value from a colon-separated key/value pair"), extracts_integer_value), &
       test_description_t &
         (string_t('extracting a file base name'), extracts_file_base_name), &
@@ -77,7 +79,7 @@ contains
       assigns_string_ptr, assigns_character_ptr, constructs_from_integer_ptr, constructs_from_real_ptr, concatenates_ptr, &
       extracts_key_ptr, extracts_real_ptr, extracts_string_ptr, extracts_logical_ptr, extracts_integer_array_ptr, &
       extracts_real_array_ptr, extracts_integer_ptr, extracts_file_base_ptr, extracts_file_name_ptr, extracts_character_ptr, &
-      extracts_double_precision_value_ptr
+      extracts_double_precision_value_ptr, extracts_dp_array_value_ptr
 
     check_allocation_ptr => check_allocation
     supports_equivalence_ptr => supports_equivalence_operator
@@ -96,6 +98,7 @@ contains
     extracts_logical_ptr => extracts_logical_value
     extracts_integer_array_ptr  => extracts_integer_array_value
     extracts_real_array_ptr => extracts_real_array_value
+    extracts_dp_array_value_ptr => extracts_dp_array_value
     extracts_integer_ptr => extracts_integer_value
     extracts_file_base_ptr => extracts_file_base_name
     extracts_file_name_ptr => extracts_file_name_extension
@@ -124,6 +127,8 @@ contains
         string_t("extracting an integer array value from a colon-separated key/value pair"), extracts_integer_array_ptr), &
       test_description_t( &
         string_t("extracting an real array value from a colon-separated key/value pair"), extracts_real_array_ptr), &
+      test_description_t( &
+        string_t("extracting an double-precision array value from a colon-separated key/value pair"), extracts_dp_array_value_ptr), &
       test_description_t(string_t("extracting an integer value from a colon-separated key/value pair"), extracts_integer_ptr), &
       test_description_t(string_t('extracting a file base name'), extracts_file_base_ptr), &
       test_description_t(string_t('extracting a file name extension'), extracts_file_name_ptr) &
@@ -319,6 +324,26 @@ contains
       key_real_array_pair = string_t('"a key" : [1., 2., 4.],')
       real_array = key_real_array_pair%get_json_value(key=string_t("a key"), mold=[real::])
       passed = all(real_array == [1., 2., 4.])
+    end block
+#endif
+  end function
+
+  function extracts_dp_array_value() result(passed)
+    logical passed
+
+#ifndef _CRAYFTN
+    associate(key_dp_array_pair => string_t('"a key" : [1.D0, 2.D0, 4.D0],'))
+      associate(dp_array => key_dp_array_pair%get_json_value(key=string_t("a key"), mold=[double precision::]))
+        passed = all(dp_array == [1.D0, 2.D0, 4.D0])
+      end associate
+    end associate
+#else
+    block
+      type(string_t) key_dp_array_pair
+      double  precision, allocatable :: dp_array(:)
+      key_dp_array_pair = string_t('"a key" : [1., 2., 4.],')
+      dp_array = key_dp_array_pair%get_json_value(key=string_t("a key"), mold=[double precision::])
+      passed = all(dp_array == [1D0, 2D0, 4D0])
     end block
 #endif
   end function
