@@ -38,7 +38,7 @@ module julienne_string_m
     procedure, private :: get_real_array, get_real_array_with_character_key
     procedure, private :: get_integer_array, get_integer_array_with_character_key
     procedure, private :: get_character, get_character_with_character_key
-    procedure :: get_double_precision, get_double_precision_with_character_key
+    procedure, private :: get_double_precision, get_double_precision_with_character_key
     procedure, private :: string_t_ne_string_t, string_t_ne_character
     procedure, private :: string_t_eq_string_t, string_t_eq_character
     procedure, private :: assign_character_to_string_t
