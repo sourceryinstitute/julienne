@@ -64,7 +64,7 @@ contains
       test_description_t &
         (string_t("extracting an real array value from a colon-separated key/value pair"), extracts_real_array_value), &
       test_description_t &
-        (string_t("extracting an double-precision array value from a colon-separated key/value pair"), extracts_dp_array_value), &
+        (string_t("extracting a double-precision array value from a colon-separated key/value pair"), extracts_dp_array_value), &
       test_description_t &
         (string_t("extracting an integer value from a colon-separated key/value pair"), extracts_integer_value), &
       test_description_t &
