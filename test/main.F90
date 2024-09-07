@@ -6,14 +6,19 @@
 #endif
 
 program main
-  use bin_test_m, only : bin_test_t
-  use command_line_test_m, only : command_line_test_t
-  use formats_test_m, only : formats_test_t  
-  use julienne_m, only : command_line_t, GitHub_CI 
-  use string_test_m, only : string_test_t
-  use test_result_test_m, only : test_result_test_t  
-  use test_description_test_m, only : test_description_test_t  
-  use vector_test_description_test_m, only : vector_test_description_test_t  
+  !! Julienne unit tests driver
+
+  ! Internal utilities
+  use julienne_m                     ,only : command_line_t, GitHub_CI
+
+  ! Test modules
+  use bin_test_m                     ,only :                     bin_test_t
+  use command_line_test_m            ,only :            command_line_test_t
+  use formats_test_m                 ,only :                 formats_test_t
+  use string_test_m                  ,only :                  string_test_t
+  use test_result_test_m             ,only :             test_result_test_t
+  use test_description_test_m        ,only :        test_description_test_t
+  use vector_test_description_test_m ,only : vector_test_description_test_t
   implicit none
 
   type(bin_test_t) bin_test
