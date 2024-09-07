@@ -1,10 +1,15 @@
 ! Copyright (c) 2024, The Regents of the University of California and Sourcery Institute
 ! Terms of use are as specified in LICENSE.txt
+
+#if defined(__flang__)
+  #define NO_MULTI_IMAGE_SUPPORT
+#endif
+
 program main
   use bin_test_m, only : bin_test_t
   use command_line_test_m, only : command_line_test_t
   use formats_test_m, only : formats_test_t  
-  use julienne_m, only : command_line_t
+  use julienne_m, only : command_line_t, GitHub_CI 
   use string_test_m, only : string_test_t
   use test_result_test_m, only : test_result_test_t  
   use test_description_test_m, only : test_description_test_t  
@@ -41,26 +46,10 @@ program main
   call vector_test_description_test%report(passes,tests)
   if (.not. GitHub_CI())  call command_line_test%report(passes, tests)
 
-#ifndef __flang__
+#ifndef NO_MULTI_IMAGE_SUPPORT
   if (this_image()==1) &
 #endif
   print *, new_line('a'), "_________ In total, ",passes," of ",tests, " tests pass. _________"
   if (passes /= tests) error stop
-contains
-
-  logical function GitHub_CI()
-    integer name_length
-    character(len=:), allocatable :: CI
-
-    call get_environment_variable("CI", length=name_length)
-
-    if (name_length==0) then
-      GitHub_CI = .false.
-    else
-      allocate(character(len=name_length):: CI)
-      call get_environment_variable("CI", value=CI)
-      GitHub_CI = merge(.true., .false., CI=="true")
-    end if
-  end function
 
 end program
