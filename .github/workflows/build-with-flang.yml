@@ -27,5 +27,6 @@ jobs:
       run: |
         fpm --version
         $FC --version
-        export FPM_FC=$FC
-        fpm test --flag "-mmlir -allow-assumed-rank -O3"
+        FPM_FC=$FC
+        FPM_FFLAGS="-mmlir -allow-assumed-rank -O3"
+        fpm test
